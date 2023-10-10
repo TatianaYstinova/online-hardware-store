@@ -8,21 +8,18 @@ namespace online_hardware_store
 {
     public class Flatbed : Goods
     {
+
+        public Flatbed(string name, string manufacturer, double memory, double screenSize, double price, double discountPercentage, bool stylusSupport) : base(
+            name,
+            manufacturer,
+            memory,
+            screenSize,
+            price,
+            discountPercentage)
+        {
+            StylusSupport = stylusSupport;
+        }
         public bool StylusSupport { get; set; }
 
-        public override double GetPrice(int number)
-        {
-            const double DiscountPercentage = 0.09;
-            double discount = DiscountPercentage * (Price * number);
-            if (number >= 5)
-            {
-                double WholesalePrice = Price - discount;
-            }
-            else
-            {
-                discount = 0;
-            }
-            return Price * number - discount;
-        }
-    }
+    } 
 }

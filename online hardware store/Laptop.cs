@@ -1,28 +1,27 @@
-﻿using System;
+﻿using online_hardware_store;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace online_hardware_store
 {
     public class Laptop : Goods
     {
-        public double BatteryLife { get; set; }
-
-        public override double GetPrice(int number)
+        public Laptop(string name, string manufacturer, double memory, double screenSize, double price, double discountPercentage, double batteryLife) : base(
+            
+            name,
+            manufacturer,
+            memory,
+            screenSize,
+            price,
+            discountPercentage)
         {
-            const double DiscountPercentage = 0.05;
-            double discount = DiscountPercentage * (Price * number);
-            if (number >= 5)
-            {
-                double WholesalePrice = Price - discount;
-            }
-            else
-            {
-                discount = 0;
-            }
-            return Price * number - discount;
+            BatteryLife=batteryLife;
         }
+        public double BatteryLife { get; set; }
     }
 }

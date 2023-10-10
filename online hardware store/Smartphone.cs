@@ -10,21 +10,29 @@ namespace online_hardware_store
 {
     public class Smartphone : Goods
     {
+        public Smartphone(string name, string manufacturer, double memory, double screenSize, double price, double cameraResolution) : base(
+            name,
+            manufacturer,
+            memory,
+            screenSize,
+            price,
+            0.07
+        )
+        {
+            CameraResolution = cameraResolution;
+        }
         public double CameraResolution { get; set; }
 
-        public override double GetPrice(int number)
+        public override bool Equals(object? obj)
         {
-            const double DiscountPercentage =0.07;
-            double discount = DiscountPercentage * (Price* number);
-            if( number >= 5)
-            {
-                double WholesalePrice = Price - discount;
-            }
-            else
-            {
-                 discount = 0;
-            }
-            return Price * number - discount;
+            return obj is Smartphone smartphone &&
+                   base.Equals(obj) &&
+                   Name == smartphone.Name &&
+                   Manufacturer == smartphone.Manufacturer &&
+                   Memory == smartphone.Memory &&
+                   ScreenSize == smartphone.ScreenSize &&
+                   Price == smartphone.Price &&
+                   CameraResolution == smartphone.CameraResolution;
         }
     }
 }

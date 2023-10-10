@@ -1,40 +1,24 @@
 ﻿using online_hardware_store;
+using System.Xml.Linq;
+Smartphone SmartphoneOne = new Smartphone("Galaxy", "Samsung", 118, 6.1, 100, 12);
+Flatbed FlatbedOne = new Flatbed("Galaxy Tab", "Samsung", 223, 10, 60, 0.09, true);
+Laptop LaptopOne = new Laptop("Galaxy Book", "Samsung", 431, 18, 1100, 0.05, 15);
 
-Smartphone SmartphoneOne = new Smartphone()
-{
-    Name= "Galaxy ",
-    Manufacturer= "Samsung",
-    Memory = 118,
-    ScreenSize = 6.1,
-    Price = 100,
-    CameraResolution = 12.0
-};
-
-
-Flatbed FlatbedOne = new Flatbed()
-{
-    Name = "Galaxy Tab",
-    Manufacturer = "Samsung",
-    Memory = 223,
-    ScreenSize = 10,
-    Price = 60,
-    StylusSupport = true
-};
-Laptop LaptopOne = new Laptop()
-{
-    Name = "Galaxy Book",
-    Manufacturer = "Samsung",
-    Memory = 431,
-    ScreenSize = 18,
-    Price = 1100,
-    BatteryLife = 15
-};
 Console.WriteLine(SmartphoneOne.DoInformation());
 Console.WriteLine(LaptopOne.DoInformation());
 Console.WriteLine(FlatbedOne.DoInformation());
 
-Console.WriteLine(SmartphoneOne.GetPrice(4));
+Console.WriteLine(SmartphoneOne.GetPrice(10));
 Console.WriteLine(FlatbedOne.GetPrice(1));
 Console.WriteLine(LaptopOne.GetPrice(2));
 
-Console.WriteLine(LaptopOne.Equals(FlatbedOne));
+
+Smartphone SmartphoneTwo = new Smartphone("Galaxy", "Samsung", 118, 6.1, 100, 12).;
+if (SmartphoneOne.Equals(SmartphoneTwo))
+{
+    Console.WriteLine(" Равны");
+}
+else
+{
+    Console.WriteLine("Не равны");
+}
