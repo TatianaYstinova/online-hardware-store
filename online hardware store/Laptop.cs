@@ -9,7 +9,7 @@ using System.Xml.Linq;
 
 namespace online_hardware_store
 {
-    public class Laptop : Goods
+    public class Laptop : AbstractGoods
     {
         public Laptop(string name, string manufacturer, double memory, double screenSize, double price, double discountPercentage, double batteryLife) : base(
             
@@ -23,5 +23,11 @@ namespace online_hardware_store
             BatteryLife=batteryLife;
         }
         public double BatteryLife { get; set; }
+
+        public override bool Equals(object? obj)
+        {
+            return obj is Laptop laptop &&
+                   BatteryLife == laptop.BatteryLife;
+        }
     }
 }

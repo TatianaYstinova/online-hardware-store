@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace online_hardware_store
 {
-    public class Goods
+    public abstract class AbstractGoods
     {
         public string Name { get; set; }
 
@@ -17,7 +17,7 @@ namespace online_hardware_store
         public double Price { get; set; }
         public double _discountPercentage { get; private set; }
 
-        public Goods(string name, string manufacturer, double memory, double screenSize, double price, double discountPercentage)
+        public AbstractGoods(string name, string manufacturer, double memory, double screenSize, double price, double discountPercentage)
         {
             Name =  name;
             Manufacturer = manufacturer;
@@ -45,12 +45,5 @@ namespace online_hardware_store
             return sum;
         }
 
-        public override bool Equals(object? obj)
-        {
-            return obj is Goods goods &&
-                   Name == goods.Name &&
-                   Manufacturer == goods.Manufacturer &&
-                   Memory == goods.Memory;
-        }
     } 
 }

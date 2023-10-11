@@ -8,21 +8,19 @@ using System.Xml.Linq;
 
 namespace online_hardware_store
 {
-    public class Smartphone : Goods
+    public class Smartphone : AbstractGoods
     {
-        public Smartphone(string name, string manufacturer, double memory, double screenSize, double price, double cameraResolution) : base(
+        public Smartphone( string name, string manufacturer, double memory, double screenSize, double price, int cameraResolution) : base( 
             name,
-            manufacturer,
-            memory,
+            manufacturer, 
+            memory, 
             screenSize,
             price,
-            0.07
-        )
+            discountPercentage)
         {
             CameraResolution = cameraResolution;
         }
         public double CameraResolution { get; set; }
-
         public override bool Equals(object? obj)
         {
             return obj is Smartphone smartphone &&
