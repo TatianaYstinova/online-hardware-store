@@ -8,6 +8,7 @@ namespace online_hardware_store
 {
     public class Flatbed: AbstractGoods
     {
+        public bool StylusSupport { get; set; }
 
         public Flatbed(string name, string manufacturer, double memory, double screenSize, double price, double discountPercentage, bool stylusSupport) : base(
             name,
@@ -19,7 +20,6 @@ namespace online_hardware_store
         {
             StylusSupport = stylusSupport;
         }
-        public bool StylusSupport { get; set; }
 
         public override bool Equals(object? obj)
         {

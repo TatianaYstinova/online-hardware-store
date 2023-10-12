@@ -11,6 +11,7 @@ namespace online_hardware_store
 {
     public class Laptop : AbstractGoods
     {
+        public double BatteryLife { get; set; }
         public Laptop(string name, string manufacturer, double memory, double screenSize, double price, double discountPercentage, double batteryLife) : base(
             
             name,
@@ -22,7 +23,6 @@ namespace online_hardware_store
         {
             BatteryLife=batteryLife;
         }
-        public double BatteryLife { get; set; }
 
         public override bool Equals(object? obj)
         {

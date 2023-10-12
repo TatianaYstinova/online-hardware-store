@@ -10,12 +10,11 @@ namespace online_hardware_store
     public abstract class AbstractGoods
     {
         public string Name { get; set; }
-
         public string Manufacturer { get; set; }
         public double Memory { get; set; }
         public double ScreenSize { get; set; }
         public double Price { get; set; }
-        public double _discountPercentage { get; private set; }
+        protected double _discountPercentage { get; private set; }
 
         public AbstractGoods(string name, string manufacturer, double memory, double screenSize, double price, double discountPercentage)
         {
@@ -31,6 +30,7 @@ namespace online_hardware_store
         {
             return $"Manufacturer:{Manufacturer} ,Name:{Name} ,Price:{Price}";
         }
+
         public double GetPrice(int number)
         {
             double sum = Price * number;
