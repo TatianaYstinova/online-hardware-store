@@ -18,7 +18,7 @@ namespace online_hardware_store
             memory,
             screenSize,
             price,
-            discountPercentage)
+            0.09)
         {
             BatteryLife=batteryLife;
         }

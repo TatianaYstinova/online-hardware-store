@@ -1,5 +1,5 @@
 ﻿using online_hardware_store;
-using System.Xml.Linq;
+
 Smartphone SmartphoneOne = new Smartphone("Galaxy", "Samsung", 118, 6.1, 100, 12);
 Flatbed FlatbedOne = new Flatbed("Galaxy Tab", "Samsung", 223, 10, 60, 0.09, true);
 Laptop LaptopOne = new Laptop("Galaxy Book", "Samsung", 431, 18, 1100, 0.05, 15);
