@@ -13,7 +13,7 @@ Console.WriteLine(FlatbedOne.GetPrice(1));
 Console.WriteLine(LaptopOne.GetPrice(2));
 
 
-Smartphone SmartphoneTwo = new Smartphone("Galaxy", "Samsung", 118, 6.1, 100, 12).;
+Smartphone SmartphoneTwo = new Smartphone("Galaxy", "Samsung", 118, 6.1, 100, 12);
 if (SmartphoneOne.Equals(SmartphoneTwo))
 {
     Console.WriteLine(" Равны");
