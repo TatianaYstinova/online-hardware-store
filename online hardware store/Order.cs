@@ -47,9 +47,5 @@ namespace online_hardware_store
             }
             return totalPrice;
         }
-
-
-
     }
-    
 }
