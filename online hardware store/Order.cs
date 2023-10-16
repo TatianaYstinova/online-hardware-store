@@ -7,27 +7,49 @@ using System.Threading.Tasks;
 
 namespace online_hardware_store
 {
-    internal class Order
+    public class Position
+    {
+        public AbstractGoods Goods;// ссылка на товар
+        public int Quantity { get; set; }// кол-во товара
+        public Position(AbstractGoods goods, int quantity) 
+        {
+            Goods=goods;
+            Quantity = quantity;
+
+        }
+        public double GetPositionPrice() //возвращает цену 1 позиции
+        {
+            return Goods.GetPrice(Quantity) ;
+        }
+    }
+    public class Order
     {
         public string NameCustomers { get; set; }
-        public double DateOfCreation { get; set; }
-        public double OrderPosition{ get;set; }
-        public double NumberOfOrders { get; set; }
+        public string DateOfCreation { get; set; }
+        public List<Position>Positions { get; set;}// позиции заказа
 
-        public double GetPrice(int number,int price , int _discountPercentage)
+        public Order(string nameCustomers,string dateOfCreation)
         {
-            double sum = price * number;
-
-            if (number >= 5)
+            NameCustomers = nameCustomers;
+            DateOfCreation = dateOfCreation;
+            Positions = new List<Position>();
+        }
+        public void AddPosition(Position position)//  добавление позиции в заказ
+        {
+            Positions.Add(position);
+        }
+        public double TotalPrice()
+        {
+            double totalPrice = 0;
+            foreach (Position position in Positions)
             {
-                double discount = _discountPercentage * sum;
-
-                return sum - discount;
+                totalPrice += position.GetPositionPrice();
             }
-
-            return sum;
+            return totalPrice;
         }
 
 
+
     }
+    
 }

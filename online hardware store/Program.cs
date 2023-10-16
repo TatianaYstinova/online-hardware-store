@@ -1,4 +1,5 @@
 ﻿using online_hardware_store;
+using System.Diagnostics;
 
 Smartphone SmartphoneOne = new Smartphone("Galaxy", "Samsung", 118, 6.1, 100, 12);
 Flatbed FlatbedOne = new Flatbed("Galaxy Tab", "Samsung", 223, 10, 60, 0.09, true);
@@ -22,3 +23,7 @@ else
 {
     Console.WriteLine("Не равны");
 }
+
+AbstractGoods smartpfone = new Smartphone();
+Position positionOne = new Position(smartpfone, 2);
+
