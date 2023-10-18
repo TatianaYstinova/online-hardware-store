@@ -4,24 +4,10 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static online_hardware_store.Position;
 
 namespace online_hardware_store
 {
-    public class Position
-    {
-        public AbstractGoods Goods;// ссылка на товар
-        public int Quantity { get; set; }// кол-во товара
-        public Position(AbstractGoods goods, int quantity) 
-        {
-            Goods=goods;
-            Quantity = quantity;
-
-        }
-        public double GetPositionPrice() //возвращает цену 1 позиции
-        {
-            return Goods.GetPrice(Quantity) ;
-        }
-    }
     public class Order
     {
         public string NameCustomers { get; set; }

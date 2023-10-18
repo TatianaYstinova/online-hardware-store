@@ -24,6 +24,4 @@ else
     Console.WriteLine("Не равны");
 }
 
-AbstractGoods smartpfone = new Smartphone();
-Position positionOne = new Position(smartpfone, 2);
 
