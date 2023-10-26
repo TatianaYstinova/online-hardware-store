@@ -26,5 +26,7 @@ namespace online_hardware_store
             return obj is Flatbed flatbed &&
                    StylusSupport == flatbed.StylusSupport;
         }
+
+       
     }
 }

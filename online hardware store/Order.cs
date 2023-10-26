@@ -8,7 +8,7 @@ using static online_hardware_store.Position;
 
 namespace online_hardware_store
 {
-    public class Order
+    public class Order :IOrder
     {
         public string NameCustomers { get; set; }
         public string DateOfCreation { get; set; }

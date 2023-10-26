@@ -8,16 +8,8 @@ namespace online_hardware_store
 {
     public interface IOrder
     {
-        public void AddPosition();
+        public void AddPosition(Position position);
         public double TotalPrice();
     }
-    public interface ICoods
-    {
-        public string DoInformation();
-        public double GetPrice();
-
-    }
-   
-   
-    
 }
+    

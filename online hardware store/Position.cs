@@ -9,9 +9,9 @@ namespace online_hardware_store
 {
         public class Position
         {
-            public AbstractGoods Goods;// ссылка на товар
+            public IGoods Goods;// ссылка на товар
             public int Quantity { get; set; }// кол-во товара
-            public Position(AbstractGoods goods, int quantity)
+            public Position(IGoods goods, int quantity)
             {
                 Goods = goods;
                 Quantity = quantity;
@@ -21,8 +21,6 @@ namespace online_hardware_store
             {
                 return Goods.GetPrice(Quantity);
             }
-
-  
         }
  }
 

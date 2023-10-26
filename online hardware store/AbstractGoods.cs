@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace online_hardware_store
 {
-    public abstract class AbstractGoods
+    public abstract class AbstractGoods:IGoods
     {
         public string Name { get; set; }
         public string Manufacturer { get; set; }
